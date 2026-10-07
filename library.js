@@ -5,22 +5,7 @@ function Book(title, author, pages) {
     this.author = author;
     this.pages = pages;
     this.id = crypto.randomUUID();
-
-    getTitle = function() {
-        return this.title;
-    }
-
-    getAuthor = function() {
-        return this.author;
-    }
-
-    getPages = function() {
-        return this.pages;
-    }
-
-    getID = function () {
-        return this.id;
-    }
+    this.read = false;
 }
 
 Book.prototype.getTitle = function() {
@@ -37,6 +22,14 @@ Book.prototype.getPages = function() {
 
 Book.prototype.getID = function() {
     return this.id;
+}
+
+Book.prototype.setRead = function() {
+    this.read = (this.read) ? false : true;
+}
+
+Book.prototype.getRead = function() {
+    return this.read;
 }
 
 
